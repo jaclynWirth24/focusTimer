@@ -6,6 +6,7 @@ import { colors } from "../utils/colors";
 
 const minutesToMillis = (min) => min * 1000 * 60;
 const formatTime = (time) => (time < 10 ? `0${time}` : time);
+
 export const Countdown = ({ minutes = 0.1, isPaused, onProgress, onEnd }) => {
   const interval = React.useRef(null);
 
@@ -45,7 +46,7 @@ export const Countdown = ({ minutes = 0.1, isPaused, onProgress, onEnd }) => {
   const minute = Math.floor(millis / 1000 / 60) % 60;
   const seconds = Math.floor(millis / 1000) % 60;
   return (
-    <Text style={styles.text }>
+    <Text style={styles.text}>
       {formatTime(minute)}:{formatTime(seconds)}
     </Text>
   );
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     color: colors.offWhite,
     padding: spacing.lg,
     backgroundColor: colors.sienaGold,
-    textShadowColor: 'rgba(0, 0, 0, 0.75)', // This line sets the color of the text outline
+    textShadowColor: "rgba(0, 0, 0, 0.75)", // This line sets the color of the text outline
     textShadowOffset: { width: -1, height: 1 }, // This line sets the offset of the text outline
     textShadowRadius: 10, // This line sets the blur radius of the text outline
     // 'rgba(94, 132, 226, 0.3)',
